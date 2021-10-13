@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LanguageInjectionConfiguration">
+    <injection language="ThymeleafExpressions" injector-id="xml">
+      <display-name>div/@if</display-name>
+      <place><![CDATA[xmlAttribute().withLocalName(string().equalTo("if")).withNamespace(string().equalTo("http://thymeleaf.org")).withParent(xmlTag().withLocalName(string().equalTo("div")).withNamespace(string().equalTo("http://www.w3.org/1999/html")))]]></place>
+    </injection>
+    <injection language="ThymeleafExpressions" injector-id="xml">
+      <display-name>input/@field</display-name>
+      <place><![CDATA[xmlAttribute().withLocalName(string().equalTo("field")).withNamespace(string().equalTo("http://thymeleaf.org")).withParent(xmlTag().withLocalName(string().equalTo("input")).withNamespace(string().equalTo("http://www.w3.org/1999/html")))]]></place>
+    </injection>
+  </component>
+</project>

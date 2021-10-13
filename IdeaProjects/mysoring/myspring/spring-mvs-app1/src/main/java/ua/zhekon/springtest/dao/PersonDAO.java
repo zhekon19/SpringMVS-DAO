@@ -14,10 +14,10 @@ public class PersonDAO {
     {
         people = new ArrayList<>();
 
-        people.add(new Person(++PEOPLE_COUNT, "Nick"));
-        people.add(new Person(++PEOPLE_COUNT, "Sara"));
-        people.add(new Person(++PEOPLE_COUNT, "Vova"));
-        people.add(new Person(++PEOPLE_COUNT, "John"));
+        people.add(new Person(++PEOPLE_COUNT, "Nick", 22, "nick.@gmail.com"));
+        people.add(new Person(++PEOPLE_COUNT, "Sara", 14, "Sara.@gmail.com"));
+        people.add(new Person(++PEOPLE_COUNT, "Vova", 31, "Vova.@gmail.com"));
+        people.add(new Person(++PEOPLE_COUNT, "John", 40, "John.@gmail.com"));
     }
 
     public List<Person> index() {
@@ -26,7 +26,9 @@ public class PersonDAO {
 
     // return Person with Id
     public Person show(int id) {
-        return people.stream().filter(a -> a.getId() == id).findAny().orElse(null);
+        return people.stream()
+                .filter(a -> a.getId() == id)
+                .findAny().orElse(null);
     }
 
     public void save(Person person) {
@@ -34,11 +36,14 @@ public class PersonDAO {
         people.add(person);
     }
 
-    public void update( int id, Person person) {
+    public void update(int id, Person person) {
         Person personToBeUpdated = show(id);
         personToBeUpdated.setName(person.getName());
+        personToBeUpdated.setAge(person.getAge());
+        personToBeUpdated.setMail(person.getMail());
     }
-    public void delete(int id){
-        people.removeIf(a -> a.getId()==id);
+
+    public void delete(int id) {
+        people.removeIf(a -> a.getId() == id);
     }
 }
